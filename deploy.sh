@@ -1,4 +1,4 @@
 #!/bin/bash
-zip lambda.zip lambda.py
+zip terraform/lambda.zip src/lambda.py
 cd terraform
 terraform apply

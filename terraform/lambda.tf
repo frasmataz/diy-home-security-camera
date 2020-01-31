@@ -88,11 +88,11 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
 }
 
 resource "aws_lambda_function" "upload_trigger_lambda" {
-  filename      = "../lambda.zip"
+  filename      = "lambda.zip"
   function_name = "motion_video_trigger"
   role          = aws_iam_role.lambda_iam.arn
   handler       = "lambda.run"
-  source_code_hash = filebase64sha256("../lambda.zip")
+  source_code_hash = filebase64sha256("lambda.zip")
   runtime = "python3.7"
   environment {
     variables = {
